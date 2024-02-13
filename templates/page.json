@@ -224,10 +224,17 @@
           "settings": {
             "ImagePicker": "shopify:\/\/shop_images\/IMAGE_2_6f58ec2c-3edb-434f-ba80-d5bba337af91.png"
           }
+        },
+        "featured_section_F63g8q": {
+          "type": "Featured-section",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/IMAGE_2_6f58ec2c-3edb-434f-ba80-d5bba337af91.png"
+          }
         }
       },
       "block_order": [
-        "featured_section_xKKhQj"
+        "featured_section_xKKhQj",
+        "featured_section_F63g8q"
       ],
       "settings": {
         "HeadingTxt": "<h1>#FALAFEL VERIFIES On Instagram<\/h1>",
