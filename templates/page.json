@@ -215,6 +215,13 @@
       "settings": {
         "HeadingTxt": "textcategories vdsvsvs"
       }
+    },
+    "dummy_featured_section_Ba4LX8": {
+      "type": "dummy-featured-section",
+      "settings": {
+        "HeadingTxt": "<h1>#FALAFEL VERIFIES On Instagram<\/h1>",
+        "Description": "<p>Follow us on instagram to get featured<\/p>"
+      }
     }
   },
   "order": [
@@ -224,6 +231,7 @@
     "dummy_new_arrival_QwdxmR",
     "main",
     "dummy_categories_qyytbR",
-    "dummy_offer_section_JyEKbx"
+    "dummy_offer_section_JyEKbx",
+    "dummy_featured_section_Ba4LX8"
   ]
 }
