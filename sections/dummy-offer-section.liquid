@@ -1,9 +1,10 @@
 <div class="page-width">
+    {% for blocks in section.blocks %}
     <div>
-        {{section.settings.HeadingTxt}}
-        <img src={{blocks.settings.OfferIcon |  image_url}}>
+        <img src={{blocks.settings.OfferIcon |  image_url}} alt="image">
         <p>{{blocks.settings.OfferText}}</p>
     </div>
+    {% endfor %}
 </div>
 
 {% schema %}
@@ -19,7 +20,7 @@
         ],
         "blocks": [
             {
-                "name": "Slide",
+                "name": "OfferSection",
                 "type": "offer-section",
                 "limit": 3,
                 "settings": [
@@ -31,7 +32,8 @@
                     {
                         "type": "text",
                         "id": "OfferText",
-                        "label": "OfferText"
+                        "label": "OfferText",
+                        "default": "Free Shipping on all"
                     }
                 ]
             }
