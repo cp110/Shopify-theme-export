@@ -1,25 +1,49 @@
 <div class="page-width">
-  <div class="HeadingTxt">"Heading textsss"</div>
-  <div class="DescriptionTxt">{{section.settings.CategoryHeadingDesc}}</div>
+  <div class="HeadingTxt">{{ section.settings.CategoryHeading }}</div>
+  <div class="DescriptionTxt">{{ section.settings.CategoryHeadingDesc }}</div>
 
-  {% for blocks in section.blocks %}
-    <div>
-      <img src={{blocks.settings.ImagePicker |  image_url }} alt="image"/>
-      <div>{{blocks.settings.CategoryDescription}}</div>
-      <button class="ShopNowBtn">Shop Now</button>
-    </div>
-  {% endfor %}
+  <div class="CategoryParentDiv">
+    {% for blocks in section.blocks %}
+      <div class="CategoryDivision">
+        <img src={{blocks.settings.ImagePicker | image_url }} alt="image" />
+        <div>{{ blocks.settings.CategoryDescription }}</div>
+        <button class="ShopNowBtn">Shop Now</button>
+      </div>
+    {% endfor %}
   </div>
+</div>
 
 <style>
-  .HeadingTxt, .DescriptionTxt{
+  .HeadingTxt{
+    margin-top: 10rem;
+  }
+  .HeadingTxt,.DescriptionTxt {
     text-align: center;
   }
-  .HeadingTxt{
-    margin-bottom: 0px;
+ 
+  .CategoryParentDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  .DescriptionTxt{
-    margin: 0;
+  .CategoryDivision{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .ShopNowBtn{
+    background-color: #000;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 800;
   }
 </style>
 
@@ -29,14 +53,13 @@
     "settings": [
       {
         "type": "richtext",
-        "id" : "CategoryHeading",
+        "id": "CategoryHeading",
         "label": "Category Heading",
         "default": "<h1>#Featured Categories</h1>"
-      },
-      {
+      }, {
         "type": "richtext",
         "id": "CategoryHeadingDesc",
-        "label":"Category Description",
+        "label": "Category Description",
         "default": "<p>Phasellus lorem malesuada ligula pulvinar commodo maecenas</p>"
       }
     ],
@@ -49,8 +72,7 @@
             "type": "image_picker",
             "id": "ImagePicker",
             "label": "ImagePicker"
-          },
-          {
+          }, {
             "type": "richtext",
             "id": "CategoryDescription",
             "label": "CategoryDescription",
