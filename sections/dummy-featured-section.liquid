@@ -8,15 +8,16 @@
   {{ section.settings.HeadingTxt }}
   <p>{{ section.settings.Description }}</p>
 
-  <div class="swiper mySwiper">
+
+  <div class="swiper-container swiper--top">
     <div class="swiper-wrapper">
-      {% for blocks in section.blocks %}
-        <div class="swiper-slide">
-          <img src={{blocks.settings.ImagePicker |  image_url }} alt="SlideImages" />
-        </div>
-      {% endfor %}
+      <div class="swiper-slide">
+        <img src={{blocks.settings.ImagePicker | image_url }} alt="SlideImages" />
+      </div>
     </div>
   </div>
+
+
 </div>
 
 
@@ -27,43 +28,55 @@
   .FeaturedSection h1 {
     margin-bottom: 0;
   }
-  html,
-  body {
-    position: relative;
-    height: 100%;
-  }
-
-  body {
-    background: #eee;
-    font-family: Helvetica Neue
-    , Helvetica
-    , Arial
-    , sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-  }
-
-  .swiper {
+  .swiper-container {
     width: 100%;
     height: 100%;
+    position: relative;
+     &:after {
+      content: '';
+      display: block;
+      width: 200%;
+      height: 1px;
+      background-size: 10% 1px;
+      background-position: -50px;
+      background-repeat: repeat-x;
+      position: absolute;
+      left: -10%;
+      top: 40%;
+      animation: line-slide 60s forwards infinite linear;
+      z-index: 1;
+    }
+    &.swiper--bottom {
+       &:after {
+        animation-direction: reverse;
+      }
+    }
   }
-
+  .swiper-wrapper {
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    position: relative;
+  }
   .swiper-slide {
     text-align: center;
-    font-size: 18px;
+    font-size: 33px;
     background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 0 50px;
   }
 
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  @keyframes line-slide {
+    0% {
+      background-position: -5% 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
   }
 </style>
 
@@ -71,18 +84,33 @@
 
 <!-- Initialize Swiper -->
 <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 6,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-    });
+   let SwiperTop = new Swiper('.swiper--top', {
+  spaceBetween: 0,
+  centeredSlides: true,
+  speed: 4000,
+  autoplay: {
+    delay: 1,
+  },
+  loop: true,
+  slidesPerView:'auto',
+  allowTouchMove: false,
+  disableOnInteraction: true
+  });
+
+  let SwiperBottom = new Swiper('.swiper--bottom', {
+  spaceBetween: 0,
+  centeredSlides: true,
+  speed: 6000,
+  autoplay: {
+    delay: 1,
+    reverseDirection: true
+  },
+  loop: true,
+  loopedSlides: 4,
+  slidesPerView:'auto',
+  allowTouchMove: false,
+  disableOnInteraction: true
+  });
 </script>
 
 
