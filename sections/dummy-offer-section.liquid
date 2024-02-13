@@ -1,5 +1,6 @@
 <div class="page-width">
     <div>
+        {{section.settings.HeadingTxt}}
         <img src={{blocks.settings.OfferIcon |  image_url}}>
         <p>{{blocks.settings.OfferText}}</p>
     </div>
@@ -8,6 +9,14 @@
 {% schema %}
     {
         "name" : "Dummy-offer-section",
+        "section":[
+            {
+                "type":"text",
+                "id":"HeadingTxt",
+                "label":"Headingtxt",
+                "default":"textcategories"
+            }
+        ],
         "blocks": [
             {
                 "name": "Slide",
