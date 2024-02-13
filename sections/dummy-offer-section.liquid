@@ -1,11 +1,30 @@
 <div class="page-width">
+    <div class="ParentDivBox">
     {% for blocks in section.blocks %}
-    <div>
+    <div class="divBox">
         <img src={{blocks.settings.OfferIcon |  image_url}} alt="image">
         <p>{{blocks.settings.OfferText}}</p>
     </div>
     {% endfor %}
+    </div>
 </div>
+
+<style>
+    .ParentDivBox{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #fafafa;
+        margin: 8rem 0 8rem 0;
+    }
+    .divBox{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        cursor: pointer;
+    }
+</style>
 
 {% schema %}
     {
