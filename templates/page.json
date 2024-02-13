@@ -216,16 +216,10 @@
         "HeadingTxt": "textcategories vdsvsvs"
       }
     },
-    "dummy_featured_section_Ba4LX8": {
+    "dummy_featured_section_UaACW6": {
       "type": "dummy-featured-section",
       "blocks": {
-        "featured_section_xKKhQj": {
-          "type": "Featured-section",
-          "settings": {
-            "ImagePicker": "shopify:\/\/shop_images\/IMAGE_2_6f58ec2c-3edb-434f-ba80-d5bba337af91.png"
-          }
-        },
-        "featured_section_F63g8q": {
+        "featured_section_phDHnB": {
           "type": "Featured-section",
           "settings": {
             "ImagePicker": "shopify:\/\/shop_images\/IMAGE_2_6f58ec2c-3edb-434f-ba80-d5bba337af91.png"
@@ -233,11 +227,10 @@
         }
       },
       "block_order": [
-        "featured_section_xKKhQj",
-        "featured_section_F63g8q"
+        "featured_section_phDHnB"
       ],
       "settings": {
-        "HeadingTxt": "<h1>#FALAFEL VERIFIES On Instagram<\/h1>",
+        "HeadingTxt": "<h1>Featured Heading<\/h1>",
         "Description": "<p>Follow us on instagram to get featured<\/p>"
       }
     }
@@ -250,6 +243,6 @@
     "main",
     "dummy_categories_qyytbR",
     "dummy_offer_section_JyEKbx",
-    "dummy_featured_section_Ba4LX8"
+    "dummy_featured_section_UaACW6"
   ]
 }
