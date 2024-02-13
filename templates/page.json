@@ -189,14 +189,22 @@
           "type": "offer-section",
           "settings": {
             "OfferIcon": "shopify:\/\/shop_images\/Vector.svg",
-            "OfferText": "Offer text fgghhhg"
+            "OfferText": "Offer text fgghhhg dvdv"
+          }
+        },
+        "offer_section_AJWYen": {
+          "type": "offer-section",
+          "settings": {
+            "OfferText": ""
           }
         }
       },
       "block_order": [
-        "offer_section_gfwKQX"
+        "offer_section_gfwKQX",
+        "offer_section_AJWYen"
       ],
       "settings": {
+        "HeadingTxt": "textcategories vdsvsvs"
       }
     }
   },
