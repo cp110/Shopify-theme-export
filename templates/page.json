@@ -188,7 +188,8 @@
         "offer_section_gfwKQX": {
           "type": "offer-section",
           "settings": {
-            "OfferText": "<p>Offer text<\/p>"
+            "OfferIcon": "shopify:\/\/shop_images\/Vector.svg",
+            "OfferText": "Offer text"
           }
         }
       },
