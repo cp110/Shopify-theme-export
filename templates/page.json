@@ -230,11 +230,46 @@
           "settings": {
             "ImagePicker": "shopify:\/\/shop_images\/IMAGE_2_6f58ec2c-3edb-434f-ba80-d5bba337af91.png"
           }
+        },
+        "featured_section_76kdkU": {
+          "type": "Featured-section",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/IMAGE_2_6f58ec2c-3edb-434f-ba80-d5bba337af91.png"
+          }
+        },
+        "featured_section_Gq4Lqm": {
+          "type": "Featured-section",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/IMAGE_2_6f58ec2c-3edb-434f-ba80-d5bba337af91.png"
+          }
+        },
+        "featured_section_6XgehN": {
+          "type": "Featured-section",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/IMAGE_2_6f58ec2c-3edb-434f-ba80-d5bba337af91.png"
+          }
+        },
+        "featured_section_tNzByX": {
+          "type": "Featured-section",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/IMAGE_2_6f58ec2c-3edb-434f-ba80-d5bba337af91.png"
+          }
+        },
+        "featured_section_fzgNda": {
+          "type": "Featured-section",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/IMAGE_2_6f58ec2c-3edb-434f-ba80-d5bba337af91.png"
+          }
         }
       },
       "block_order": [
         "featured_section_WkKEzj",
-        "featured_section_cRFbmM"
+        "featured_section_cRFbmM",
+        "featured_section_76kdkU",
+        "featured_section_Gq4Lqm",
+        "featured_section_6XgehN",
+        "featured_section_tNzByX",
+        "featured_section_fzgNda"
       ],
       "settings": {
         "HeadingTxt": "<h1>#FALAFEL VERIFIES On Instagram<\/h1>",
