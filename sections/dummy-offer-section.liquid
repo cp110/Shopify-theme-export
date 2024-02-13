@@ -1,0 +1,37 @@
+<div>
+    <div>
+        <img src={{blocks.settings.OfferIcon}}>
+        <p>{{blocks.settings.OfferText}}</p>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name" : "Dummy-offer-section",
+        "blocks": [
+            {
+                "name": "Slide",
+                "type": "offer-section",
+                "limit": 3,
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "OfferIcon",
+                        "label": "Offer-Icon"
+                    },
+                    {
+                        "type": "text",
+                        "default": "<p>Offer text</p>",
+                        "id": "OfferText",
+                        "label": "OfferText"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Dummy Offer Section"
+            }
+        ]
+    }
+{% endschema %}
