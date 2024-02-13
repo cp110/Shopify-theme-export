@@ -1,0 +1,194 @@
+{
+  "sections": {
+    "dummy_banner_qbczqN": {
+      "type": "dummy-banner",
+      "settings": {
+        "BannerHeading": "<h1><strong>DUMMY HEADING<\/strong><\/h1>",
+        "BannerImage": "shopify:\/\/shop_images\/BGimage.png",
+        "descriptionTxt": "<p>Quisquemos sodales suscipit tortor ditaemcos condimentum de cosmo lacus<\/p>",
+        "BtnTxt": "Shop Now"
+      }
+    },
+    "dummy_collection_4A3h4T": {
+      "type": "dummy-collection",
+      "blocks": {
+        "text_xxghjh": {
+          "type": "text",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/ClothImg4.svg",
+            "description": "Fitness Wear"
+          }
+        },
+        "text_zdXYnJ": {
+          "type": "text",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/ClothImg4.svg",
+            "description": "Shorts"
+          }
+        },
+        "text_LqmDrk": {
+          "type": "text",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/ClothImg4.svg",
+            "description": "Fitness Brand"
+          }
+        },
+        "text_pXXDHg": {
+          "type": "text",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/ClothImg4.svg",
+            "description": "Smart Watch"
+          }
+        },
+        "text_x3Umie": {
+          "type": "text",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/ClothImg4.svg",
+            "description": "Collection"
+          }
+        }
+      },
+      "block_order": [
+        "text_xxghjh",
+        "text_zdXYnJ",
+        "text_LqmDrk",
+        "text_pXXDHg",
+        "text_x3Umie"
+      ],
+      "settings": {
+      }
+    },
+    "dummy_image_gallary_VLBJmj": {
+      "type": "dummy-Image-Gallary",
+      "blocks": {
+        "image_Wcfw7h": {
+          "type": "image",
+          "settings": {
+            "Image1": "shopify:\/\/shop_images\/cfb7986e1cdd311c41344147fe90cb91_823x_1.png",
+            "Image2": "shopify:\/\/shop_images\/388635a8906c19abdc8c65fe5ce645fe_1.png"
+          }
+        },
+        "image_yrGmaF": {
+          "type": "image",
+          "settings": {
+            "Image1": "shopify:\/\/shop_images\/170faebfeb36df9ae2222306c245e44c_1.png",
+            "Image2": "shopify:\/\/shop_images\/6c5ad5c7c5553cb64ffa2b6edffe6ce5_1.png"
+          }
+        },
+        "image_GMcFnw": {
+          "type": "image",
+          "settings": {
+            "Image1": "shopify:\/\/shop_images\/388635a8906c19abdc8c65fe5ce645fe_1.png",
+            "Image2": "shopify:\/\/shop_images\/cfb7986e1cdd311c41344147fe90cb91_823x_1.png"
+          }
+        },
+        "image_r6zrNh": {
+          "type": "image",
+          "settings": {
+            "Image1": "shopify:\/\/shop_images\/170faebfeb36df9ae2222306c245e44c_1.png",
+            "Image2": "shopify:\/\/shop_images\/6c5ad5c7c5553cb64ffa2b6edffe6ce5_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_Wcfw7h",
+        "image_yrGmaF",
+        "image_GMcFnw",
+        "image_r6zrNh"
+      ],
+      "settings": {
+      }
+    },
+    "dummy_new_arrival_QwdxmR": {
+      "type": "dummy-new-arrival",
+      "blocks": {
+        "collection_3RULzW": {
+          "type": "Collection",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/ArrivalImg1.png",
+            "ArrivalTitle": "<p>New Men's Gym Jogging Exercise Fitness Sports Suit Male<\/p>",
+            "ArrivalPrice": "$60.00"
+          }
+        },
+        "collection_ww34nd": {
+          "type": "Collection",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/ArrivalImg3.png",
+            "ArrivalTitle": "<p>Factory Sale Gym Fitness Clothing Custom Shorts Fitness<\/p>",
+            "ArrivalPrice": "$16.50"
+          }
+        },
+        "collection_XEBf4J": {
+          "type": "Collection",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/ArrivalImg2.png",
+            "ArrivalTitle": "<p>Fitness Equipment Booty Belt Exercise Resistance Band Set<\/p>",
+            "ArrivalPrice": "$4.00"
+          }
+        },
+        "collection_QWEhdQ": {
+          "type": "Collection",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/ArrivalImg4.png",
+            "ArrivalTitle": "<p>Smart Watch With Bracelet - Black<\/p>",
+            "ArrivalPrice": "$29.25"
+          }
+        }
+      },
+      "block_order": [
+        "collection_3RULzW",
+        "collection_ww34nd",
+        "collection_XEBf4J",
+        "collection_QWEhdQ"
+      ],
+      "settings": {
+        "ArrivalHeading": "<h1>New Arrival<\/h1>",
+        "ArrivalOption1": "Shorts",
+        "ArrivalOption2": "Smart watch",
+        "ArrivalOption3": "Fitness Band"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "dummy_categories_qyytbR": {
+      "type": "dummy-categories",
+      "blocks": {
+        "categories_cERajJ": {
+          "type": "Categories",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/IMAGE_04052682-d0c9-40aa-8bea-fbda39a200a2.png",
+            "CategoryDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat de euismod sed non merat. Nulla non felis id metus bibendum...<\/p>"
+          }
+        },
+        "categories_WDRNQd": {
+          "type": "Categories",
+          "settings": {
+            "ImagePicker": "shopify:\/\/shop_images\/IMAGE_1_4f1511fa-4a95-4e0d-8800-000fda849ebd.png",
+            "CategoryDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat de euismod sed non merat. Nulla non felis id metus bibendum...<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "categories_cERajJ",
+        "categories_WDRNQd"
+      ],
+      "settings": {
+        "CategoryHeading": "<h1>#Featured Categories<\/h1>",
+        "CategoryHeadingDesc": "<p>Phasellus lorem malesuada ligula pulvinar commodo maecenas<\/p>"
+      }
+    }
+  },
+  "order": [
+    "dummy_banner_qbczqN",
+    "dummy_collection_4A3h4T",
+    "dummy_image_gallary_VLBJmj",
+    "dummy_new_arrival_QwdxmR",
+    "main",
+    "dummy_categories_qyytbR"
+  ]
+}

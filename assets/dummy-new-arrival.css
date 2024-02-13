@@ -1,0 +1,46 @@
+.ArrivalHeading {
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.ArrivalTitleDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.ArrivalTitleDiv p {
+  font-size: 20px;
+  color: #828282;
+  font-weight: 800;
+  margin-top: 0;
+}
+
+.ParentArrivalDiv {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.ArrivalDiv p {
+  font-size: 18px;
+  color: #232323;
+  margin: 0;
+  line-height: 30px;
+}
+
+.CartBtn{
+    background-color: #fff;
+    border: none;
+    padding: 9px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 15px 0px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid #232323;
+    font-size: 18px;
+    color: #232323;
+}

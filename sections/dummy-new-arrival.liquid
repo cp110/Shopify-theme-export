@@ -1,0 +1,79 @@
+{{ 'dummy-new-arrival.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+  <div class="ArrivalHeading">{{section.settings.ArrivalHeading}}</div>
+  <div class="ArrivalTitleDiv">
+    <p>{{section.settings.ArrivalOption1 |  capitalize}}</p>
+    <p>{{section.settings.ArrivalOption2 |  capitalize}}</p>
+    <p>{{section.settings.ArrivalOption3 |  capitalize}}</p>
+  </div>
+  <div class="ParentArrivalDiv">
+    {% for blocks in section.blocks %}
+      <div class="ArrivalDiv">
+        <img src={{blocks.settings.ImagePicker |  image_url}} alt="image"/>
+        <p>{{ blocks.settings.ArrivalTitle }}</p>
+        <p>{{blocks.settings.ArrivalPrice}}</p>
+        <button class="CartBtn">Add to Cart</button>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Dummy-new-arrival",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "ArrivalHeading",
+        "label":"Arrival-Heading",
+        "default": "<h1>New Arrival</h1>"
+      },
+      {
+        "type": "text",
+        "id": "ArrivalOption1",
+        "label":"ArrivalOption1"
+      },
+      {
+        "type": "text",
+        "id": "ArrivalOption2",
+        "label":"ArrivalOption2"
+      },
+      {
+        "type": "text",
+        "id": "ArrivalOption3",
+        "label":"ArrivalOption3"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Collection",
+        "name":"slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id":"ImagePicker",
+            "label": "ImagePicker"
+          },
+          {
+            "type": "richtext",
+            "id":"ArrivalTitle",
+            "label": "ArrivalTitle"
+          },
+          {
+            "type": "text",
+            "id":"ArrivalPrice",
+            "label": "ArrivalPrice"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Dummy new Arrival"
+      }
+    ]
+  }
+{% endschema %}

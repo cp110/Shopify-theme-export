@@ -1,0 +1,68 @@
+<div class="page-width">
+  <div class="HeadingTxt">{{section.settings.CategoryHeading}}</div>
+  <div class="DescriptionTxt">{{section.settings.CategoryHeadingDesc}}</div>
+
+  {% for blocks in section.blocks %}
+    <div>
+      <img src={{blocks.settings.ImagePicker |  image_url }} alt="image"/>
+      <div>{{blocks.settings.CategoryDescription}}</div>
+      <button class="ShopNowBtn">Shop Now</button>
+    </div>
+  {% endfor %}
+  </div>
+
+<style>
+  .HeadingTxt, .DescriptionTxt{
+    text-align: center;
+  }
+  .HeadingTxt{
+    margin-bottom: 0px;
+  }
+  .DescriptionTxt{
+    margin: 0;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Dummy-categories",
+    "settings": [
+      {
+        "type": "richtext",
+        "id" : "CategoryHeading",
+        "label": "Category Heading",
+        "default": "<h1>#Featured Categories</h1>"
+      },
+      {
+        "type": "richtext",
+        "id": "CategoryHeadingDesc",
+        "label":"Category Description",
+        "default": "<p>Phasellus lorem malesuada ligula pulvinar commodo maecenas</p>"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "slide",
+        "type": "Categories",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "ImagePicker",
+            "label": "ImagePicker"
+          },
+          {
+            "type": "richtext",
+            "id": "CategoryDescription",
+            "label": "CategoryDescription",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis risus elementum in malesuada an darius ut augue. Cras sit amet lectus et justo feugiat de euismod sed non merat. Nulla non felis id metus bibendum...</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Dummy new Categories"
+      }
+    ]
+  }
+{% endschema %}

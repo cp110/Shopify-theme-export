@@ -1,0 +1,50 @@
+{{ 'dummy-banner.css' | asset_url | stylesheet_tag }}
+
+<div class="DummyBannerParent">
+  <img src={{section.settings.BannerImage | img_url}} class="BannerImage" />
+  <div class="page-width">
+    <div class="TextContainer">
+      {{section.settings.BannerHeading}}
+      <div class="descriptionTxt">{{ section.settings.descriptionTxt }}</div>
+      <button class="Shopbutton">Shop now</button>
+    </div>
+  </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Dummy-Banner",
+    "settings": [
+      {
+        "type": "richtext",
+        "id":"BannerHeading",
+        "label":"Banner-Heading",
+        "default":"<h1>DUMMY HEADING</h1>"
+      },
+      {
+        "type": "image_picker",
+        "id": "BannerImage",
+        "label": "Image-Picker"
+      },
+      {
+        "type":"richtext",
+        "id":"descriptionTxt",
+        "label":"Description-Text",
+        "default":"<p>Default description</p>"
+      },
+      {
+        "type":"text",
+        "id":"BtnTxt",
+        "label":"Button-Text",
+        "default":"<p>Shop Now</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Dummy-Banner"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,70 @@
+<div class="page-width">
+<div class="customContainer">
+  {% for blocks in section.blocks %}
+  <div class="customContainer_slide">    
+    {% if blocks.settings.ImagePicker != blank %}
+      <div class="customContainer_image">
+      <img src={{blocks.settings.ImagePicker | image_url}} height="100" width="200"/>
+    </div>
+    {% else %}
+      <p>Image doesn't exist</p>
+    {% endif %}
+    <h4 class="customContainer_title">{{ blocks.settings.description }}</h4>
+  </div>
+  {% endfor %}
+</div>
+</div>
+
+<style>
+  .customContainer{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    display: flex;
+  }
+  .customContainer_slide{
+    padding: 0.5em;
+    box-shadow: 5px slategrey;
+    max-width: 250px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px slategray;
+  }
+  .customContainer_image img{
+    width: 10vw;
+  }
+  .customContainer_title{
+    text-align:center;
+  }
+</style>
+
+
+{% schema %}
+  {
+    "name": "Dummy-Collection",
+    "blocks": [
+      {
+        "type": "text",
+        "name":"slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "ImagePicker",
+            "label": "ImagePicker"
+          },
+          {
+            "type":"text",
+            "id":"description",
+            "label":"Description",
+            "default":"Description"
+          }          
+        ]
+      }
+    ],
+    "presets" :[
+      {
+        "name":"Dummy Collection"
+      }
+    ]
+  }
+{% endschema %}
