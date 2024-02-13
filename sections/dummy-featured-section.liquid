@@ -1,0 +1,37 @@
+<div class="FeaturedSection">
+    <h1>{{section.settings.HeadingTxt}}</h1>
+    <p>{{section.settings.Description}}</p>
+</div>
+
+
+<style>
+    .FeaturedSection{
+        text-align: center;
+    }
+</style>
+
+
+{% schema %}
+    {
+        "name":"Dummy-Featured-Section",
+        "settings":[
+            {
+                "type": "richtext",
+                "id": "HeadingTxt",
+                "label":"FeaturedHeading",
+                "default": "<h1>Featured Heading</h1>"
+            },
+            {
+                "type": "richtext",
+                "id": "Description",
+                "label":"FeauredDescription",
+                "default": "<p>Follow us on instagram to get featured</p>"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Dummy Featured Section"
+            }
+        ]
+    }
+{%endschema%}
