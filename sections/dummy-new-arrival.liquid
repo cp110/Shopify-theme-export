@@ -2,7 +2,7 @@
 
 <div class="page-width">
   {% if section.settings.arrival_checkbox %}
-    <div class="ArrivalHeading">{{ section.settings.ArrivalHeading }}</div>
+    <div class="ArrivalHeading" {{ block.settings.heading_size }}>{{ section.settings.ArrivalHeading }}</div>
   {% endif %}
   <div class="ArrivalTitleDiv">
     <p>{{ section.settings.ArrivalOption1 | capitalize }}</p>
@@ -31,6 +31,26 @@
         "id": "ArrivalHeading",
         "label": "Arrival-Heading",
         "default": "<h1>New Arrival</h1>"
+      },
+      {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__3.label"
+            }
+          ],
+          "default": "h1",
+          "label": "t:sections.all.heading_size.label"
       },
       {
         "type": "checkbox",
