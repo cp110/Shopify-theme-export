@@ -1,7 +1,7 @@
 {{ 'dummy-new-arrival.css' | asset_url | stylesheet_tag }}
 
 <div class="page-width">
-  <div class="ArrivalHeading">{{section.settings.ArrivalHeading}}</div>
+<div class="ArrivalHeading{% if section.settings.arrival_checkbox %} hidden {% endif %}">{{section.settings.ArrivalHeading}}</div>
   <div class="ArrivalTitleDiv">
     <p>{{section.settings.ArrivalOption1 |  capitalize}}</p>
     <p>{{section.settings.ArrivalOption2 |  capitalize}}</p>
@@ -33,7 +33,7 @@
       },
       {
         "type": "checkbox",
-        "id": "ArrivalHeading",
+        "id": "arrival_checkbox",
         "label": "Show ArrivalHeading",
         "default": true
       },
