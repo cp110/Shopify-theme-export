@@ -1,7 +1,7 @@
 {{ 'dummy-new-arrival.css' | asset_url | stylesheet_tag }}
 
 <div class="page-width">
-  {% if section.settings.arrival_checkbox == false %}
+  {% if section.settings.arrival_checkbox == true %}
     <div class="ArrivalHeading">{{ section.settings.ArrivalHeading }}</div>
   {% endif %}
   <div class="ArrivalTitleDiv">
