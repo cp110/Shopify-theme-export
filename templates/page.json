@@ -4,7 +4,7 @@
       "type": "dummy-banner",
       "settings": {
         "BannerHeading": "<h1><strong>DUMMY HEADING<\/strong><\/h1>",
-        "BannerImage": "shopify:\/\/shop_images\/hero-section.png",
+        "BannerImage": "shopify:\/\/shop_images\/BGimage.png",
         "descriptionTxt": "<p>Quisquemos sodales suscipit tortor ditaemcos condimentum de cosmo lacus<\/p>",
         "BtnTxt": "Shop Now"
       }
