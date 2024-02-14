@@ -4,7 +4,7 @@
       "type": "dummy-banner",
       "settings": {
         "BannerHeading": "<h1><strong>DUMMY HEADING<\/strong><\/h1>",
-        "BannerImage": "shopify:\/\/shop_images\/BGimage.png",
+        "BannerImage": "shopify:\/\/shop_images\/hero-section.png",
         "descriptionTxt": "<p>Quisquemos sodales suscipit tortor ditaemcos condimentum de cosmo lacus<\/p>",
         "BtnTxt": "Shop Now"
       }
@@ -143,6 +143,8 @@
       ],
       "settings": {
         "ArrivalHeading": "<h1>New Arrival<\/h1>",
+        "heading_size": "h1",
+        "arrival_checkbox": true,
         "ArrivalOption1": "Shorts",
         "ArrivalOption2": "Smart watch",
         "ArrivalOption3": "Fitness Band"
