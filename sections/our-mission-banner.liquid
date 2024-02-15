@@ -1,13 +1,24 @@
 <div class="page-width">
-  <h1>{{ page.title }}</h1>
-  <p>{{ page.content }}</p>
-
-  <p>Our mission page addeddd in vs code liquiod file</p>
+  <h1>{{section.settings.OurMissionTitle}}</h1>
+  <p>{{section.settings.OurMissionDesc}}</p>
 </div>
 
 {% schema %}
   {
     "name": "Our-Mission Section",
-    "settings": []
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "OurMissionTitle",
+        "label":"Banner-Heading",
+        "default": "<h1>Our Mission</h1>"
+      },
+      {
+        "type":"text",
+        "id":"OurMissionDesc",
+        "label": "Banner-Description",
+        "default": "<p>Banner Description</p>"
+      }
+    ]
   }
 {% endschema %}
