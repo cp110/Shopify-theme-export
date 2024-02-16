@@ -7,9 +7,27 @@
         "OurMissionDesc": "Where to grow your business as a photographer: site or social media?",
         "BannerImage": "shopify:\/\/shop_images\/Illustration.png"
       }
+    },
+    "our_client_cRPKT3": {
+      "type": "our-client",
+      "blocks": {
+        "slide_GyVPMK": {
+          "type": "Slide",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "slide_GyVPMK"
+      ],
+      "settings": {
+        "heading": "Our Clients",
+        "description": "We have been working with some Fortune 500+ clients"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "our_client_cRPKT3"
   ]
 }
