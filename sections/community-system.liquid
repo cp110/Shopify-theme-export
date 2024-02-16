@@ -1,0 +1,73 @@
+{{ 'community-system.css' | asset_url | stylesheet_tag }}
+
+
+<div class="page-width">
+  <div class="Community_Section">
+    <h2 class="TitleTxt">{{ section.settings.HeadingTxt }}</h2>
+    <p class="ParaTxt">{{ section.settings.DescTxt }}</p>
+    <div class="ParentBoxDiv">
+      {% for blocks in section.blocks %}
+        <div class="BoxDiv">
+          <div>
+            <img src={{blocks.settings.CommunityIcon | img_url}} alt="Community-Icon">
+            <div class="ImageSideDiv"></div>
+          </div>
+
+          <h1 class="BoxHeading">{{ blocks.settings.BlockHeading }}</h1>
+          <p class="BoxDesc">{{ blocks.settings.BlockDesc }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+Product collection::  
+{{product.collections[1]}}
+
+</div>
+
+
+{% schema %}
+  {
+    "name": "Community-system",
+    "settings": [
+      {
+        "type": "text",
+        "id": "HeadingTxt",
+        "label": "Community Heading",
+        "default": "Manage your entire community in a single system"
+      }, {
+        "type": "text",
+        "id": "DescTxt",
+        "label": "Community Description",
+        "default": "who is Nextcent Suitable for?"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "Slide",
+        "name": "CommunityBlock",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "CommunityIcon",
+            "label": "Community Icon"
+          }, {
+            "type": "text",
+            "id": "BlockHeading",
+            "label": "Block Heading"
+          }, {
+            "type": "text",
+            "id": "BlockDesc",
+            "label": "Block Description"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Community-System"
+      }
+    ]
+  }
+{% endschema %}
