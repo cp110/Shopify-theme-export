@@ -16,10 +16,45 @@
           "settings": {
             "IconImg": "shopify:\/\/shop_images\/Logo.png"
           }
+        },
+        "slide_4w3wzK": {
+          "type": "Slide",
+          "settings": {
+            "IconImg": "shopify:\/\/shop_images\/Logo_5.png"
+          }
+        },
+        "slide_3aCjxP": {
+          "type": "Slide",
+          "settings": {
+            "IconImg": "shopify:\/\/shop_images\/Logo_6.png"
+          }
+        },
+        "slide_DgfidL": {
+          "type": "Slide",
+          "settings": {
+            "IconImg": "shopify:\/\/shop_images\/Logo_1.png"
+          }
+        },
+        "slide_C3Vymq": {
+          "type": "Slide",
+          "settings": {
+            "IconImg": "shopify:\/\/shop_images\/Logo_3.png"
+          }
+        },
+        "slide_qQDHT9": {
+          "type": "Slide",
+          "settings": {
+            "IconImg": "shopify:\/\/shop_images\/Logo_4.png"
+          }
         }
       },
       "block_order": [
-        "slide_GyVPMK"
+        "slide_GyVPMK",
+        "slide_4w3wzK",
+        "slide_3aCjxP",
+        "slide_DgfidL",
+        "slide_C3Vymq",
+        "slide_qQDHT9"
       ],
       "settings": {
         "heading": "Our Clients",
