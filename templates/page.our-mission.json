@@ -60,10 +60,49 @@
         "heading": "Our Clients",
         "description": "We have been working with some Fortune 500+ clients"
       }
+    },
+    "community_system_R9tYUy": {
+      "type": "community-system",
+      "blocks": {
+        "slide_T6btPc": {
+          "type": "Slide",
+          "settings": {
+            "CommunityIcon": "shopify:\/\/shop_images\/Icon_1.png",
+            "BlockHeading": "Membership Organisations",
+            "BlockDesc": "Our membership management software provides full automation of membership renewals and payments"
+          }
+        },
+        "slide_jmJHER": {
+          "type": "Slide",
+          "settings": {
+            "CommunityIcon": "shopify:\/\/shop_images\/Icon.png",
+            "BlockHeading": "National Associations",
+            "BlockDesc": "Our membership management software provides full automation of membership renewals and payments"
+          }
+        },
+        "slide_fzQFWr": {
+          "type": "Slide",
+          "settings": {
+            "CommunityIcon": "shopify:\/\/shop_images\/Icon_2.png",
+            "BlockHeading": "Clubs And Groups",
+            "BlockDesc": "Our membership management software provides full automation of membership renewals and payments"
+          }
+        }
+      },
+      "block_order": [
+        "slide_T6btPc",
+        "slide_jmJHER",
+        "slide_fzQFWr"
+      ],
+      "settings": {
+        "HeadingTxt": "Manage your entire community in a single system",
+        "DescTxt": "who is Nextcent Suitable for?"
+      }
     }
   },
   "order": [
     "main",
-    "our_client_cRPKT3"
+    "our_client_cRPKT3",
+    "community_system_R9tYUy"
   ]
 }
