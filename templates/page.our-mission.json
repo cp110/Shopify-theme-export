@@ -3,7 +3,7 @@
     "main": {
       "type": "our-mission-banner",
       "settings": {
-        "OurMissionTitle": "<p>Lessons and insights from 8 years<\/p>",
+        "OurMissionTitle": "<h1>Lessons and insights from 8 years<\/h1>",
         "OurMissionDesc": "Where to grow your business as a photographer: site or social media?",
         "BannerImage": "shopify:\/\/shop_images\/Illustration.png"
       }
