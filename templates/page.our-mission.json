@@ -14,6 +14,7 @@
         "slide_GyVPMK": {
           "type": "Slide",
           "settings": {
+            "IconImg": "shopify:\/\/shop_images\/Logo.png"
           }
         }
       },
