@@ -1,24 +1,301 @@
-<div class="page-width">
-    {{section.settings.HeadingTxt}}
-</div>
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'custom-collection.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'pop-up.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
+{% style %} 
+    .section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    @media only screen and (max-width: 1024px){
+        .section-{{ section.id }}{
+            padding-top: {{ section.settings.tablet_padding_top }}px;
+            padding-bottom: {{ section.settings.tablet_padding_bottom }}px;
+        }
+    }
+    @media only screen and (max-width: 767px){
+        .section-{{ section.id }}{
+            padding-top: {{ section.settings.mobile_padding_top }}px;
+            padding-bottom: {{ section.settings.mobile_padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+<section class="custom-collection section-{{ section.id }}">
+    <div class="page-width">
+        {% assign card_collection = section.settings.collection %} 
+        {%- if section.settings.main_title != blank -%}
+            <h2 class="main-title">{{ section.settings.main_title }}</h2>
+        {%  else %} 
+            <h2 class="main-title">{{ card_collection.title }}</h2>
+        {% endif %}
+        <div class="swiper custom-collection-content">
+            <div class="swiper-wrapper">
+                {%- for product in card_collection.products limit: section.settings.products_to_show -%}
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            {% render 'card-product',
+                                card_product: product,
+                                media_aspect_ratio: section.settings.image_ratio,
+                                image_shape: section.settings.image_shape,
+                                show_secondary_image: section.settings.show_secondary_image,
+                                show_vendor: section.settings.show_vendor,
+                                show_rating: section.settings.show_rating,
+                                section_id: section.id
+                            %}
+                        </div>
+                        {% if product.variants.size > 1 %}
+                        <div class="quick-view" >
+                            <button class="quick-btn" data-product-url="{{ product.url }}" data-product='{{- product | json -}}' data-id="{{ product.id }}">
+                                {% render 'quick-icon' %} 
+                            </button>
+                        </div>
+                        {%- else -%}
+                        <form method="post" action="/cart/add">
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                        <input type="submit" value="Add to cart" class="btn" /> 
+                    </form>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+            <div class="collecton-btn {% if section.settings.button_border %} buttom-border {% endif %} ">
+                {%- if section.settings.btn_text != blank -%}
+                    <a href="{{ card_collection.url }}">{{ section.settings.btn_text }}</a>
+                {% endif %}
+            </div>
+        </div>
+{% comment %} code for quick view  {% endcomment %}
+<div id="popup" class="product-quick-view hidden">
+    <div class="product-desc">
+        <div class="popup-content"></div>  
+        <div class="close-btn">
+            {% render 'icon-close' %} 
+        </div>
+    </div>
+</div> 
+{% comment %} code quick view end  {% endcomment %}
+</section>
+<script>
+window.addEventListener('load', function() {
+    const swiper = new Swiper(".custom-collection-content", {
+    
+    slidesPerView: 3,
+    spaceBetween: 20,
+    loop: true,
 
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
 
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    481: {
+      slidesPerView: 3,
+      spaceBetween: 20
+    },
+    1025: {
+      slidesPerView: 4,
+      spaceBetween: 20
+    }
+  }
+
+    });
+});
+</script>
 
 {% schema %}
-{
-    "name": "Dummy-collection-bar",
-    "settings": [
-        {
-            "type": "text",
-            "id":"HeadingTxt",
-            "label": "Collection Heading",
-            "default": "Collection Heading"
-        }
-    ],
-    "presets": [
-        {
-            "name":"Dummy-collection-bar"
-        }
-    ]
-}
+    {
+        "name" : "Custom Collection", 
+        "settings": [
+            {
+                "type": "text",
+                "id": "main_title",
+                "label": "Heading"
+            },
+            {
+                "type": "collection",
+                "id": "collection",
+                "label": "collection"
+            },
+            {
+                "type": "text",
+                "id": "btn_text",
+                "label": "Button Teaxt"
+            },
+            {
+                "type": "range",
+                "id": "products_to_show",
+                "min": 2,
+                "max": 25,
+                "step": 1,
+                "default": 4,
+                "label": "Products To Show"
+            },
+            {
+                "type": "checkbox",
+                "id": "button_border",
+                "default": false,
+                "label": "Add Buttom border"
+            },
+            {
+                "type": "select",
+                "id": "image_ratio",
+                "options": [
+                    {
+                    "value": "adapt",
+                    "label": "t:sections.featured-collection.settings.image_ratio.options__1.label"
+                    },
+                    {
+                    "value": "portrait",
+                    "label": "t:sections.featured-collection.settings.image_ratio.options__2.label"
+                    },
+                    {
+                    "value": "square",
+                    "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
+                    }
+                ],
+                "default": "adapt",
+                "label": "t:sections.featured-collection.settings.image_ratio.label"
+                },
+                {
+                "type": "select",
+                "id": "image_shape",
+                "options": [
+                    {
+                    "value": "default",
+                    "label": "t:sections.all.image_shape.options__1.label"
+                    },
+                    {
+                    "value": "arch",
+                    "label": "t:sections.all.image_shape.options__2.label"
+                    },
+                    {
+                    "value": "blob",
+                    "label": "t:sections.all.image_shape.options__3.label"
+                    },
+                    {
+                    "value": "chevronleft",
+                    "label": "t:sections.all.image_shape.options__4.label"
+                    },
+                    {
+                    "value": "chevronright",
+                    "label": "t:sections.all.image_shape.options__5.label"
+                    },
+                    {
+                    "value": "diamond",
+                    "label": "t:sections.all.image_shape.options__6.label"
+                    },
+                    {
+                    "value": "parallelogram",
+                    "label": "t:sections.all.image_shape.options__7.label"
+                    },
+                    {
+                    "value": "round",
+                    "label": "t:sections.all.image_shape.options__8.label"
+                    }
+                ],
+                "default": "default",
+                "label": "t:sections.all.image_shape.label",
+                "info": "t:sections.all.image_shape.info"
+                },
+                {
+                "type": "checkbox",
+                "id": "show_secondary_image",
+                "default": false,
+                "label": "t:sections.featured-collection.settings.show_secondary_image.label"
+                },
+                {
+                "type": "checkbox",
+                "id": "show_vendor",
+                "default": false,
+                "label": "t:sections.featured-collection.settings.show_vendor.label"
+                },
+                {
+                "type": "checkbox",
+                "id": "show_rating",
+                "default": false,
+                "label": "t:sections.featured-collection.settings.show_rating.label",
+                "info": "t:sections.featured-collection.settings.show_rating.info"
+                },
+                {
+                "type": "checkbox",
+                "id": "enable_quick_add",
+                "default": false,
+                "label": "t:sections.featured-collection.settings.enable_quick_buy.label"
+                },
+            {
+                "type": "range",
+                "id": "padding_top",
+                "min": 0,
+                "max": 200,
+                "step": 4,
+                "unit": "px",
+                "label": "Padding Top",
+                "default": 36
+            },
+            {
+                "type": "range",
+                "id": "padding_bottom",
+                "min": 0,
+                "max": 200,
+                "step": 4,
+                "unit": "px",
+                "label": "Padding Bottom",
+                "default": 36
+            },
+            {
+                "type": "range",
+                "id": "tablet_padding_top",
+                "min": 0,
+                "max": 100,
+                "step": 4,
+                "unit": "px",
+                "label": "Tablet Padding Top",
+                "default": 36
+            },
+            {
+                "type": "range",
+                "id": "tablet_padding_bottom",
+                "min": 0,
+                "max": 100,
+                "step": 4,
+                "unit": "px",
+                "label": "tablet Padding Bottom",
+                "default": 36
+            },
+            {
+                "type": "range",
+                "id": "mobile_padding_top",
+                "min": 0,
+                "max": 100,
+                "step": 4,
+                "unit": "px",
+                "label": "Mobile Padding Top",
+                "default": 36
+            },
+            {
+                "type": "range",
+                "id": "mobile_padding_bottom",
+                "min": 0,
+                "max": 100,
+                "step": 4,
+                "unit": "px",
+                "label": "Mobile Padding Bottom",
+                "default": 36
+            }
+        ],
+        "presets": [
+            {
+                "name": "Custom Collection"
+            }
+        ]
+    }
 {% endschema %}
