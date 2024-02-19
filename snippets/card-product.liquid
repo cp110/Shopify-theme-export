@@ -6,7 +6,8 @@
   - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
   - image_shape: {String} Image mask to apply to the product image card. Values are "arch", "blob", "chevronleft", "chevronright", "diamond", "parallelogram", and "round". (optional)
   - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
-  - show_vendor: {Boolean} Show the product vendor. Default: false
+  - show_vendor: {Boolean} Show the product vendor. Default: true
+  - show_price: {Boolean} Show the product price. Default: false
   - show_rating: {Boolean} Show the product rating. Default: false
   - extend_height: {Boolean} Card height extends to available container space. Default: true (optional)
   - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
@@ -17,8 +18,12 @@
   - placeholder_image: {String} The placeholder image to use when no product exists. Default: 'product-apparel-2' (optional)
 
   Usage:
+  {% render 'card-product', show_price: section.settings.show_price %}
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
+
 {% endcomment %}
+
+
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
@@ -36,7 +41,6 @@
     endif
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
-    {% comment %} {{card_product |  json}} {% endcomment %}
     <div
       class="
         card card--{{ settings.card_style }}
@@ -101,7 +105,7 @@
               {%- endif -%}
             </div>
           </div>
-        {%- endif -%}card_product
+        {%- endif -%}
         <div class="card__content">
           <div class="card__information">
             <h3
@@ -156,8 +160,8 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
-          <h4>{{ }}</h4>
           <div class="card-information">
+           vendor: {{show_vendor}}
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
@@ -175,7 +179,7 @@
                   assign rating_decimal = 1
                 endif
               %}
-              <div
+              <divproduct
                 class="rating"
                 role="img"
                 aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: card_product.metafields.reviews.rating.value, rating_max: card_product.metafields.reviews.rating.value.scale_max }}"
@@ -185,7 +189,7 @@
                   class="rating-star"
                   style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
                 ></span>
-              </div>
+              </divproduct>
               <p class="rating-text caption">
                 <span aria-hidden="true">
                   {{- card_product.metafields.reviews.rating.value }} /
@@ -201,7 +205,10 @@
               </p>
             {%- endif -%}
 
+            {% if show_price %}
             {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+            {% endif %}
+
             {%- if card_product.quantity_price_breaks_configured? -%}
               <div class="card__information-volume-pricing-note">
                 <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>

@@ -3,7 +3,7 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'custom-collection.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'pop-up.js' | asset_url }}" defer="defer"></script>
+{% comment %} <script src="{{ 'pop-up.js' | asset_url }}" defer="defer"></script> {% endcomment %}
 <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
 
 
@@ -27,15 +27,17 @@
                                 show_secondary_image: section.settings.show_secondary_image,
                                 show_vendor: section.settings.show_vendor,
                                 show_rating: section.settings.show_rating,
-                                section_id: section.id
+                                section_id: section.id,
+                                show_price: section.settings.show_price
                             %}
+                            {{section.settings.show_price}}
                         </div>
                         {% if product.variants.size > 1 %}
-                        <div class="quick-view" >
+                        {% comment %} <div class="quick-view" >
                             <button class="quick-btn" data-product-url="{{ product.url }}" data-product='{{- product | json -}}' data-id="{{ product.id }}">
                                 {% render 'quick-icon' %} 
                             </button>
-                        </div>
+                        </div> {% endcomment %}
                         {%- else -%}
                         <form method="post" action="/cart/add">
                         <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
@@ -199,8 +201,14 @@ window.addEventListener('load', function() {
                 {
                 "type": "checkbox",
                 "id": "show_vendor",
-                "default": false,
+                "default": true,
                 "label": "t:sections.featured-collection.settings.show_vendor.label"
+                },
+                {
+                "type": "checkbox",
+                "id": "show_price",
+                "default": false,
+                "label": "Show price"
                 },
                 {
                 "type": "checkbox",
