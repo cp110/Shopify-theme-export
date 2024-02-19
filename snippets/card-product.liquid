@@ -36,6 +36,7 @@
     endif
   -%}
   <div class="card-wrapper product-card-wrapper underline-links-hover">
+    {% comment %} {{card_product |  json}} {% endcomment %}
     <div
       class="
         card card--{{ settings.card_style }}
@@ -100,7 +101,7 @@
               {%- endif -%}
             </div>
           </div>
-        {%- endif -%}
+        {%- endif -%}card_product
         <div class="card__content">
           <div class="card__information">
             <h3
@@ -155,6 +156,7 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
+          <h4>{{ }}</h4>
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
