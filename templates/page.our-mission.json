@@ -99,10 +99,26 @@
         "DescTxt": "who is Nextcent Suitable for?"
       }
     },
-    "dummy_collection_bar_Je4gyY": {
+    "dummy_collection_bar_g9LHai": {
       "type": "dummy-collection-bar",
       "settings": {
-        "HeadingTxt": "Collection Heading"
+        "main_title": "Dummy Collection Bar",
+        "collection": "weight",
+        "btn_text": "View All",
+        "products_to_show": 4,
+        "button_border": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "tablet_padding_top": 36,
+        "tablet_padding_bottom": 36,
+        "mobile_padding_top": 36,
+        "mobile_padding_bottom": 36
       }
     }
   },
@@ -110,6 +126,6 @@
     "main",
     "our_client_cRPKT3",
     "community_system_R9tYUy",
-    "dummy_collection_bar_Je4gyY"
+    "dummy_collection_bar_g9LHai"
   ]
 }
