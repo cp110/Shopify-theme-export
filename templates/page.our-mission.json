@@ -98,11 +98,18 @@
         "HeadingTxt": "Manage your entire community in a single system",
         "DescTxt": "who is Nextcent Suitable for?"
       }
+    },
+    "dummy_collection_bar_Je4gyY": {
+      "type": "dummy-collection-bar",
+      "settings": {
+        "HeadingTxt": "Collection Heading"
+      }
     }
   },
   "order": [
     "main",
     "our_client_cRPKT3",
-    "community_system_R9tYUy"
+    "community_system_R9tYUy",
+    "dummy_collection_bar_Je4gyY"
   ]
 }
