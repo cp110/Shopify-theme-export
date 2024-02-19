@@ -26,6 +26,7 @@
 <section class="custom-collection section-{{ section.id }}">
     <div class="page-width">
         {% assign card_collection = section.settings.collection %} 
+        <h1>{{card_collection}}</h1>
         {%- if section.settings.main_title != blank -%}
             <h2 class="main-title">{{ section.settings.main_title }}</h2>
         {%  else %} 
