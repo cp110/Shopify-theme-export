@@ -40,7 +40,6 @@
               media_aspect_ratio: section.settings.image_ratio,
               image_shape: section.settings.image_shape,
               show_secondary_image: section.settings.show_secondary_image,
-              second_image: section.settings.second_image,
               show_vendor: section.settings.show_vendor,
               show_rating: section.settings.show_rating
             %}
@@ -188,14 +187,8 @@
     },
     {
       "type": "checkbox",
-      "id": "second_image",
-      "default": true,
-      "label": "Show Second Image"
-    },
-    {
-      "type": "checkbox",
       "id": "show_vendor",
-      "default": true,
+      "default": false,
       "label": "t:sections.related-products.settings.show_vendor.label"
     },
     {
