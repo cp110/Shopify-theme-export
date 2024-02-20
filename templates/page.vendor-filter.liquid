@@ -1,0 +1,9 @@
+% assign selected_vendor = request.params.vendor %}
+<h1>{{ selected_vendor }} Products</h1>
+
+{% for product in collections.all.products %}
+  {% if product.vendor == selected_vendor %}
+    {{ product.title }}
+    <!-- Add other product details as needed -->
+  {% endif %}
+{% endfor %}
