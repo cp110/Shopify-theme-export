@@ -30,20 +30,7 @@
                                 section_id: section.id,
                                 show_price: section.settings.show_price
                             %}
-                            {{section.settings.show_price}}
                         </div>
-                        {% if product.variants.size > 1 %}
-                        {% comment %} <div class="quick-view" >
-                            <button class="quick-btn" data-product-url="{{ product.url }}" data-product='{{- product | json -}}' data-id="{{ product.id }}">
-                                {% render 'quick-icon' %} 
-                            </button>
-                        </div> {% endcomment %}
-                        {%- else -%}
-                        <form method="post" action="/cart/add">
-                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                        <input type="submit" value="Add to cart" class="btn" /> 
-                    </form>
-                        {% endif %}
                     </div>
                 {% endfor %}
             </div>
