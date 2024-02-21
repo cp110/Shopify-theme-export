@@ -1,33 +1,10 @@
- {% comment %} {%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
-  {%- assign pageUrl = contentForQuerystring
-    | split: '"pageurl":"'
-    | last
-    | split: '"'
-    | first
-    | split: '.myshopify.com'
-    | last
-    | replace: '\/', '/'
-    | replace: '%20', ' '
-    | replace: '\u0026', '&'
-  -%}
-  {% capture finalurl %}https://{{ pageUrl }}{% endcapture %}
-  {{ finalurl }}   {% endcomment %}
-
-
-
-
-  {{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'custom-collection.css' | asset_url | stylesheet_tag }}
 {% comment %} <script src="{{ 'pop-up.js' | asset_url }}" defer="defer"></script> {% endcomment %}
 <script src="{{ 'product-info.js' | asset_url }}" defer="defer"></script>
-
-
-
-{% comment %} {% assign vendorParam = request.querystring | split: "=" | last %}
-vendorParams:{{vendorParam}} {% endcomment %}
 
 
 <section class="custom-collection section-{{ section.id }}">
