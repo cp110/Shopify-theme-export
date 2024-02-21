@@ -1,0 +1,38 @@
+{% assign selected_vendor = request.querystring.vendor %}
+
+vendor::{{selected_vendor}}
+
+
+<div class="page-width">
+  <h1>{{ selected_vendor }} Products</h1>
+</div>
+
+{% for product in collections.all.products %}
+  {% if product.vendor == selected_vendor %}
+    {{ product.title }}
+    <!-- Add other product details as needed -->
+  {% endif %}
+{% endfor %}
+
+
+
+{% comment %} {%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+  {%- assign pageUrl = contentForQuerystring
+    | split: '"pageurl":"'
+    | last
+    | split: '"'
+    | first
+    | split: '.myshopify.com'
+    | last
+    | replace: '\/', '/'
+    | replace: '%20', ' '
+    | replace: '\u0026', '&'
+  -%}
+  {% capture finalurl %}https://{{ pageUrl }}{% endcapture %}
+  {{ finalurl }} {% endcomment %}
+
+
+
+
+
+

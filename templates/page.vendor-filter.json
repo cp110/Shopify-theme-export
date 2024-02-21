@@ -1,0 +1,13 @@
+{
+    "sections": {
+        "main":{
+            "type": "vendor-filter",
+            "settings": {
+            }
+        }
+    },
+    "order":[
+        "main",
+        "vendor-filter"
+    ]
+}
