@@ -1,4 +1,9 @@
-{% assign selected_vendor = request.querystring.vendor %}
+<div class="page-width">
+  <h1>vendor page</h1>
+</div>
+
+
+{% comment %} {% assign selected_vendor = request.querystring.vendor %}
 
 vendor::{{selected_vendor}}
 
@@ -12,7 +17,7 @@ vendor::{{selected_vendor}}
     {{ product.title }}
     <!-- Add other product details as needed -->
   {% endif %}
-{% endfor %}
+{% endfor %} {% endcomment %}
 
 
 
